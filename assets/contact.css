@@ -1,0 +1,48 @@
+/* Contact */
+.ct-sec { padding: 40px 0 80px; }
+.ct-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+.ct-info { display: grid; gap: 20px; }
+.ct-card { background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius); padding: 24px; }
+.ct-card h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--sage-700); margin-bottom: 10px; }
+.ct-card a { font-family: var(--font-display); font-size: 22px; color: var(--ink); }
+.ct-card a:hover { color: var(--sage-700); }
+.ct-card p { font-size: 14px; color: var(--muted); margin: 8px 0 0; }
+
+.ct-form {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: grid;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+}
+.ct-field { display: grid; gap: 8px; }
+.ct-field label { font-size: 13px; font-weight: 600; color: var(--ink); }
+.ct-field input, .ct-field textarea, .ct-field select {
+  width: 100%;
+  border: 1px solid var(--hairline-2);
+  background: var(--cream-50);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  transition: border-color .15s ease, background .15s ease;
+}
+.ct-field textarea { resize: vertical; }
+.ct-field input:focus, .ct-field textarea:focus, .ct-field select:focus {
+  outline: none;
+  border-color: var(--sage-500);
+  background: #fff;
+}
+.ct-form button { justify-self: start; }
+
+.ct-sent { text-align: center; padding: 30px 0; }
+.ct-sent-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--sage-100); color: var(--sage-700); display: grid; place-items: center; margin: 0 auto 16px; font-size: 22px; }
+.ct-sent h3 { font-family: var(--font-display); font-size: 28px; }
+.ct-sent p { color: var(--ink-2); }
+
+@media (max-width: 860px) {
+  .ct-grid { grid-template-columns: 1fr; gap: 40px; }
+}
