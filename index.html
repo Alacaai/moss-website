@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>Moss — Plant identifier & care</title>
   <meta name="description" content="Moss identifies any plant from your camera and sends gentle, tailored care reminders. Built for plant lovers." />
-  <link rel="icon" type="image/png" href="assets/moss-logo.png" />
+  <link rel="icon" type="image/png" href="uploads/mossIcon.png" />
+  <link rel="apple-touch-icon" href="uploads/mossIcon.png" />
   <link rel="stylesheet" href="assets/site.css" />
   <link rel="stylesheet" href="assets/phone.css" />
   <link rel="stylesheet" href="assets/home.css" />
@@ -13,13 +16,12 @@
 <body>
   <div id="root"></div>
 
-  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-
+  <script type="text/babel" src="assets/i18n.jsx"></script>
   <script type="text/babel" src="assets/shared.jsx"></script>
   <script type="text/babel" src="assets/phone-mock.jsx"></script>
-  <script type="text/babel" src="assets/tweaks-panel.jsx"></script>
   <script type="text/babel" src="assets/home.jsx"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ function PhoneMock({ variant = "scan" }) {
 }
 
 function ScanScreen() {
+  const { t } = useLanguage();
   return (
     <div className="pm pm-scan">
       <div className="pm-cam">
@@ -39,20 +40,20 @@ function ScanScreen() {
           </svg>
         </div>
         <div className="pm-scanline" />
-        <div className="pm-hint">Hold steady — identifying…</div>
+        <div className="pm-hint">{t("phone.scanHint")}</div>
       </div>
       <div className="pm-result">
         <div className="pm-result-head">
           <div>
-            <div className="pm-name">Monstera deliciosa</div>
-            <div className="pm-sub">Swiss cheese plant · 98% match</div>
+            <div className="pm-name">{t("phone.plantName")}</div>
+            <div className="pm-sub">{t("phone.plantSub")}</div>
           </div>
           <div className="pm-badge">✓</div>
         </div>
         <div className="pm-stats">
-          <div><span>☀︎</span> Bright indirect</div>
-          <div><span>💧</span> Weekly</div>
-          <div><span>◐</span> 65–80°F</div>
+          <div><span>☀︎</span> {t("phone.bright")}</div>
+          <div><span>💧</span> {t("phone.weekly")}</div>
+          <div><span>◐</span> {t("phone.temp")}</div>
         </div>
       </div>
     </div>
@@ -60,20 +61,18 @@ function ScanScreen() {
 }
 
 function LibraryScreen() {
-  const plants = [
-    { name: "Fiona", sp: "Monstera deliciosa", next: "Water in 2 days", hue: "#6f9167" },
-    { name: "Basil", sp: "Ficus lyrata", next: "Misting today", hue: "#486b45" },
-    { name: "Pepper", sp: "Pilea peperomioides", next: "Rotate pot", hue: "#8fb085" },
-    { name: "Sage", sp: "Sansevieria trifasciata", next: "All good", hue: "#5f8c5a" },
-  ];
+  const { t } = useLanguage();
+  const hues = ["#6f9167", "#486b45", "#8fb085", "#5f8c5a"];
+  const plants = t("phone.plants").map(([name, sp, next], index) => ({ name, sp, next, hue: hues[index] }));
+  const tabs = t("phone.tabs");
   return (
     <div className="pm pm-lib">
       <div className="pm-head">
-        <div className="pm-hello"><span>Good morning,</span><br/>Your garden</div>
+        <div className="pm-hello">{t("phone.greeting")}</div>
         <div className="pm-dot">4</div>
       </div>
       <div className="pm-tabs">
-        <span className="on">All</span><span>Needs care</span><span>Happy</span>
+        <span className="on">{tabs[0]}</span><span>{tabs[1]}</span><span>{tabs[2]}</span>
       </div>
       <div className="pm-plants">
         {plants.map(p => (
@@ -96,6 +95,8 @@ function LibraryScreen() {
 }
 
 function CareScreen() {
+  const { t } = useLanguage();
+  const tasks = t("phone.tasks");
   return (
     <div className="pm pm-care">
       <div className="pm-care-top">
@@ -112,21 +113,21 @@ function CareScreen() {
         </svg>
         <div className="pm-care-ring-text">
           <div className="n">3</div>
-          <div className="l">days until water</div>
+          <div className="l">{t("phone.daysUntilWater")}</div>
         </div>
       </div>
       <div className="pm-tasks">
         <div className="pm-task">
           <div className="pm-task-dot done" />
-          <div><b>Rotate pot</b><span>Today</span></div>
+          <div><b>{tasks[0][0]}</b><span>{tasks[0][1]}</span></div>
         </div>
         <div className="pm-task">
           <div className="pm-task-dot" />
-          <div><b>Water (250 ml)</b><span>Friday</span></div>
+          <div><b>{tasks[1][0]}</b><span>{tasks[1][1]}</span></div>
         </div>
         <div className="pm-task">
           <div className="pm-task-dot" />
-          <div><b>Check for pests</b><span>Next week</span></div>
+          <div><b>{tasks[2][0]}</b><span>{tasks[2][1]}</span></div>
         </div>
       </div>
     </div>

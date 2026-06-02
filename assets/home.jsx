@@ -1,15 +1,8 @@
 // ----- Moss home page ------
-const { useEffect, useState } = React;
-
-/*EDITMODE-BEGIN*/
-const TWEAK_DEFAULTS_JSON = {
-  "heroVariant": "calm",
-  "accent": "sage"
-};
-/*EDITMODE-END*/
 
 // --- Hero variations ---------------------------------------------------------
 function HeroCalm() {
+  const { t, href } = useLanguage();
   return (
     <section className="hero hero-calm">
       <div className="hero-bg" aria-hidden="true">
@@ -17,20 +10,20 @@ function HeroCalm() {
       </div>
       <div className="container hero-inner">
         <div className="hero-copy">
-          <span className="eyebrow">Plant identifier &amp; care · iOS</span>
-          <h1>Any plant, <em>understood</em>.<br/>Every leaf, <em>thriving</em>.</h1>
-          <p>Point your camera at a plant to identify it in seconds. Moss learns your home and sends gentle reminders so your greenery never misses a drink.</p>
+          <span className="eyebrow">{t("home.calm.eyebrow")}</span>
+          <h1>{t("home.calm.title")}</h1>
+          <p>{t("home.calm.body")}</p>
           <div className="hero-cta">
-            <a href="download.html" className="btn btn-primary">
+            <a href={href("download.html")} className="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.94 2.4-4.36 2.51-4.43-1.37-2-3.5-2.28-4.26-2.31-1.82-.18-3.55 1.07-4.47 1.07-.93 0-2.35-1.04-3.87-1.01-1.99.03-3.82 1.16-4.84 2.94-2.07 3.58-.53 8.88 1.49 11.8.98 1.43 2.15 3.03 3.68 2.97 1.48-.06 2.04-.96 3.83-.96 1.78 0 2.29.96 3.85.93 1.59-.03 2.59-1.45 3.56-2.89 1.12-1.66 1.58-3.27 1.61-3.35-.04-.02-3.08-1.18-3.11-4.68zM14.2 3.5c.81-1 1.36-2.37 1.21-3.75-1.17.05-2.6.79-3.44 1.77-.75.86-1.41 2.26-1.24 3.6 1.31.1 2.64-.66 3.47-1.62z"/></svg>
-              Download for iOS
+              {t("home.calm.primary")}
             </a>
-            <a href="features.html" className="btn btn-ghost">See features →</a>
+            <a href={href("features.html")} className="btn btn-ghost">{t("home.calm.secondary")}</a>
           </div>
           <div className="hero-meta">
-            <div><strong>14,000+</strong><span>plant species</span></div>
-            <div><strong>4.8 ★</strong><span>App Store rating</span></div>
-            <div><strong>Free</strong><span>to try</span></div>
+            {t("home.stats").map(([value, label]) => (
+              <div key={label}><strong>{value}</strong><span>{label}</span></div>
+            ))}
           </div>
         </div>
         <div className="hero-visual">
@@ -42,21 +35,22 @@ function HeroCalm() {
 }
 
 function HeroEditorial() {
+  const { t, href } = useLanguage();
   return (
     <section className="hero hero-editorial">
       <div className="container">
         <div className="edi-top">
-          <span className="edi-label">№01 — Spring issue · Moss for iOS</span>
+          <span className="edi-label">{t("home.editorial.label")}</span>
         </div>
         <div className="edi-grid">
           <div className="edi-left">
-            <h1>A quieter way to keep plants <em>happy</em>.</h1>
+            <h1>{t("home.editorial.title")}</h1>
           </div>
           <div className="edi-right">
-            <p>Moss is a pocket-sized plant keeper — identification, watering, light and humidity, all in one kind app. Built for people who love their plants more than their spreadsheets.</p>
+            <p>{t("home.editorial.body")}</p>
             <div className="hero-cta">
-              <a href="download.html" className="btn btn-primary">Download for iOS</a>
-              <a href="features.html" className="btn btn-ghost">Read features</a>
+              <a href={href("download.html")} className="btn btn-primary">{t("home.editorial.primary")}</a>
+              <a href={href("features.html")} className="btn btn-ghost">{t("home.editorial.secondary")}</a>
             </div>
           </div>
         </div>
@@ -76,7 +70,7 @@ function HeroEditorial() {
             </svg>
           </div>
           <div className="edi-phone"><PhoneMock variant="library" /></div>
-          <figcaption>Fig. 1 — Your garden, always close at hand.</figcaption>
+          <figcaption>{t("home.editorial.caption")}</figcaption>
         </div>
       </div>
     </section>
@@ -84,26 +78,27 @@ function HeroEditorial() {
 }
 
 function HeroPlayful() {
+  const { t, href } = useLanguage();
   return (
     <section className="hero hero-playful">
       <div className="container hero-inner">
         <div className="hero-copy">
           <div className="play-sticker">
-            <span>🌱</span> New · Smart care coach
+            <span>🌱</span> {t("home.playful.sticker")}
           </div>
-          <h1>Meet <span className="underline-wavy">Moss</span> — the friendliest way to <em>parent a plant</em>.</h1>
-          <p>Identify 14,000+ species in a snap. Get reminders that actually fit your plant's mood. Build a little indoor jungle you're proud of.</p>
+          <h1>{t("home.playful.title")}</h1>
+          <p>{t("home.playful.body")}</p>
           <div className="hero-cta">
-            <a href="download.html" className="btn btn-primary">Get Moss — free</a>
-            <a href="features.html" className="btn btn-ghost">How it works</a>
+            <a href={href("download.html")} className="btn btn-primary">{t("home.playful.primary")}</a>
+            <a href={href("features.html")} className="btn btn-ghost">{t("home.playful.secondary")}</a>
           </div>
         </div>
         <div className="hero-visual play-visual">
           <div className="play-ring play-ring-1" />
           <div className="play-ring play-ring-2" />
-          <div className="play-chip play-chip-water">💧 Water Friday</div>
-          <div className="play-chip play-chip-light">☀︎ Bright indirect</div>
-          <div className="play-chip play-chip-match">✓ 98% match</div>
+          <div className="play-chip play-chip-water">💧 {t("home.playful.water")}</div>
+          <div className="play-chip play-chip-light">☀︎ {t("home.playful.light")}</div>
+          <div className="play-chip play-chip-match">✓ {t("home.playful.match")}</div>
           <PhoneMock variant="care" />
         </div>
       </div>
@@ -113,20 +108,15 @@ function HeroPlayful() {
 
 // --- Shared home sections ----------------------------------------------------
 function Features() {
-  const items = [
-    { icon: <IconCamera />, title: "Instant identification", desc: "Snap a photo, get the species, common names, and toxicity in under two seconds." },
-    { icon: <IconDrop />, title: "Smart watering", desc: "Reminders tuned to each plant's light, pot size, and your local weather." },
-    { icon: <IconSun />, title: "Light checker", desc: "Point at a window to measure lux and find the happiest spot in your home." },
-    { icon: <IconHeart />, title: "Health diagnosis", desc: "Upload a troubled leaf — Moss spots pests, nutrient gaps, and over-watering." },
-    { icon: <IconBook />, title: "Care library", desc: "Friendly guides for 14,000+ species, written with scientists and growers." },
-    { icon: <IconBell />, title: "Gentle nudges", desc: "No pushy notifications. Just the right reminder, at the right moment." },
-  ];
+  const { t } = useLanguage();
+  const icons = [<IconCamera />, <IconDrop />, <IconSun />, <IconHeart />, <IconBook />, <IconBell />];
+  const items = t("home.features").map(([title, desc], index) => ({ icon: icons[index], title, desc }));
   return (
     <section className="features">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">What's inside</span>
-          <h2>Everything your plants need, nothing they don't.</h2>
+          <span className="eyebrow">{t("home.featuresEyebrow")}</span>
+          <h2>{t("home.featuresTitle")}</h2>
         </div>
         <div className="feat-grid">
           {items.map(f => (
@@ -143,17 +133,14 @@ function Features() {
 }
 
 function HowItWorks() {
-  const steps = [
-    { n: "01", t: "Scan", d: "Open the camera and frame any plant. Works on photos too." },
-    { n: "02", t: "Identify", d: "Moss names the species and pulls its complete care profile." },
-    { n: "03", t: "Care", d: "Build a routine that adapts to season, pot, and your schedule." },
-  ];
+  const { t } = useLanguage();
+  const steps = t("home.steps").map(([n, title, d]) => ({ n, t: title, d }));
   return (
     <section className="howto">
       <div className="container">
         <div className="section-head center">
-          <span className="eyebrow">How it works</span>
-          <h2>Three gentle steps from stranger to sprout-parent.</h2>
+          <span className="eyebrow">{t("home.howEyebrow")}</span>
+          <h2>{t("home.howTitle")}</h2>
         </div>
         <div className="steps">
           {steps.map(s => (
@@ -170,6 +157,7 @@ function HowItWorks() {
 }
 
 function Quote() {
+  const { t } = useLanguage();
   return (
     <section className="quote">
       <div className="container">
@@ -177,12 +165,12 @@ function Quote() {
           <svg className="quote-mark" width="60" height="48" viewBox="0 0 60 48" fill="none" aria-hidden="true">
             <path d="M0 48V28C0 12 9 2 24 0L26 8C16 11 10 17 10 24H24V48H0ZM34 48V28C34 12 43 2 58 0L60 8C50 11 44 17 44 24H58V48H34Z" fill="currentColor"/>
           </svg>
-          <p>"I've killed more plants than I'd like to admit. Moss is the first app that actually <em>taught</em> me what my pothos needed — and it's been thriving for eight months."</p>
+          <p>{t("home.quote")}</p>
           <div className="quote-by">
             <div className="quote-avatar" aria-hidden="true">L</div>
             <div>
-              <b>Leila K.</b>
-              <span>Brooklyn, NY · 12 plants</span>
+              <b>{t("home.quoteName")}</b>
+              <span>{t("home.quoteMeta")}</span>
             </div>
           </div>
         </div>
@@ -192,6 +180,7 @@ function Quote() {
 }
 
 function FinalCta() {
+  const { t, href } = useLanguage();
   return (
     <section className="final-cta">
       <div className="container">
@@ -202,11 +191,11 @@ function FinalCta() {
               <path d="M-10 200 C 140 100 260 100 410 200 Z" fill="rgba(255,255,255,0.12)"/>
             </svg>
           </div>
-          <h2>Plant confidence,<br/>delivered one leaf at a time.</h2>
-          <p>Free on iPhone. Works offline. No account required to try.</p>
-          <a href="download.html" className="btn btn-app" style={{padding:"16px 24px", fontSize:15}}>
+          <h2>{t("home.finalTitle")}</h2>
+          <p>{t("home.finalBody")}</p>
+          <a href={href("download.html")} className="btn btn-app" style={{padding:"16px 24px", fontSize:15}}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.94 2.4-4.36 2.51-4.43-1.37-2-3.5-2.28-4.26-2.31-1.82-.18-3.55 1.07-4.47 1.07-.93 0-2.35-1.04-3.87-1.01-1.99.03-3.82 1.16-4.84 2.94-2.07 3.58-.53 8.88 1.49 11.8.98 1.43 2.15 3.03 3.68 2.97 1.48-.06 2.04-.96 3.83-.96 1.78 0 2.29.96 3.85.93 1.59-.03 2.59-1.45 3.56-2.89 1.12-1.66 1.58-3.27 1.61-3.35-.04-.02-3.08-1.18-3.11-4.68zM14.2 3.5c.81-1 1.36-2.37 1.21-3.75-1.17.05-2.6.79-3.44 1.77-.75.86-1.41 2.26-1.24 3.6 1.31.1 2.64-.66 3.47-1.62z"/></svg>
-            Download on the App Store
+            {t("home.finalCta")}
           </a>
         </div>
       </div>
@@ -224,12 +213,7 @@ function IconBell()   { return (<svg width="22" height="22" viewBox="0 0 24 24" 
 
 // --- App ---------------------------------------------------------------------
 function App() {
-  const [tweaks, setTweaks] = useTweaks(TWEAK_DEFAULTS_JSON);
-
-  const Hero =
-    tweaks.heroVariant === "editorial" ? HeroEditorial :
-    tweaks.heroVariant === "playful"   ? HeroPlayful :
-    HeroCalm;
+  const Hero = HeroCalm;
 
   return (
     <>
@@ -242,20 +226,6 @@ function App() {
         <FinalCta />
       </main>
       <Footer />
-
-      <TweaksPanel title="Tweaks">
-        <TweakSection title="Home hero style">
-          <TweakRadio
-            value={tweaks.heroVariant}
-            onChange={v => setTweaks({ heroVariant: v })}
-            options={[
-              { value: "calm",      label: "Calm — split hero with phone" },
-              { value: "editorial", label: "Editorial — magazine layout" },
-              { value: "playful",   label: "Playful — stickers & chips" },
-            ]}
-          />
-        </TweakSection>
-      </TweaksPanel>
     </>
   );
 }

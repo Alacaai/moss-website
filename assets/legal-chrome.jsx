@@ -1,5 +1,7 @@
-// Simple nav/footer mount so policy pages don't need their own JSX
-const mount = document.getElementById("chrome-top");
-if (mount) ReactDOM.createRoot(mount).render(<Nav active="legal" />);
-const footMount = document.getElementById("chrome-bottom");
-if (footMount) ReactDOM.createRoot(footMount).render(<Footer />);
+// Mount translated legal pages from the page marker on the root element.
+const legalMount = document.getElementById("root");
+if (legalMount) {
+  const fallback = document.getElementById("legal-static-fallback");
+  if (fallback) fallback.remove();
+  ReactDOM.createRoot(legalMount).render(<LegalApp page={legalMount.dataset.legalPage} />);
+}
