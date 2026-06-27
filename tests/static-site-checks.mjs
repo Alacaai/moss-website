@@ -5,10 +5,14 @@ import path from "node:path";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (file) => readFileSync(path.join(root, file), "utf8");
 const htmlFiles = readdirSync(root).filter((file) => file.endsWith(".html"));
+// Standalone static pages that intentionally live outside the React app shell
+// (no i18n / CSP / SRI chrome): excluded from the templated-page checks below.
+const STANDALONE_PAGES = new Set(["license.html"]);
+const appPages = htmlFiles.filter((file) => !STANDALONE_PAGES.has(file));
 
-assert.equal(htmlFiles.length, 9, "expected the current static HTML page set");
+assert.equal(appPages.length, 9, "expected the current static HTML page set");
 
-for (const file of htmlFiles) {
+for (const file of appPages) {
   const source = read(file);
   assert.match(source, /uploads\/mossIcon\.png/, `${file} should use mossIcon.png`);
   assert.match(source, /<link rel="apple-touch-icon"/, `${file} should define an Apple touch icon`);
@@ -57,4 +61,4 @@ for (const file of ["terms.html", "privacy.html", "eula.html"]) {
   assert.match(source, /assets\/legal-content\.jsx/, `${file} should load translated legal content`);
 }
 
-console.log(`Static checks passed for ${htmlFiles.length} HTML pages.`);
+console.log(`Static checks passed for ${appPages.length} app pages (+${STANDALONE_PAGES.size} standalone).`);

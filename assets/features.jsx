@@ -67,7 +67,7 @@ function App() {
             <div className="final-card">
               <h2>{t("featuresPage.finalTitle")}</h2>
               <p>{t("featuresPage.finalBody")}</p>
-              <a href={href("download.html")} className="btn btn-app" style={{padding:"16px 24px", fontSize:15}}>{t("featuresPage.finalCta")}</a>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-app" style={{padding:"16px 24px", fontSize:15}}>{t("featuresPage.finalCta")}</a>
             </div>
           </div>
         </section>

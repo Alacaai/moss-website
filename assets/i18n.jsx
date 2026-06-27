@@ -1,6 +1,7 @@
 const SUPPORTED_LANGUAGES = ["en", "tr"];
 const DEFAULT_LANGUAGE = "en";
 const LANGUAGE_STORAGE_KEY = "moss-language";
+const APP_STORE_URL = "https://apps.apple.com/app/moss-plant-care-rescue/id6762568960";
 
 const I18N = {
   en: {
@@ -215,6 +216,14 @@ const I18N = {
       },
     },
     phone: {
+      alts: {
+        scan: "Moss home screen with weather tips and Quick Plant Diagnosis",
+        library: "Moss daily care dashboard listing plants that need attention",
+        care: "Moss plant detail screen showing care status and watering",
+        info: "Moss plant info screen with water, light, humidity and pet-safe details",
+        guide: "Moss watering and light placement care guidance",
+        chat: "Moss AI plant care assistant answering a question",
+      },
       scanHint: "Hold steady — identifying...",
       plantName: "Monstera deliciosa",
       plantSub: "Swiss cheese plant · 98% match",
@@ -449,6 +458,14 @@ const I18N = {
       },
     },
     phone: {
+      alts: {
+        scan: "Hava durumu ipuçları ve Hızlı Bitki Teşhisi içeren Moss ana ekranı",
+        library: "Bakım gerektiren bitkileri listeleyen Moss günlük bakım panosu",
+        care: "Bakım durumunu ve sulamayı gösteren Moss bitki detay ekranı",
+        info: "Su, ışık, nem ve evcil dostu bilgilerini içeren Moss bitki bilgi ekranı",
+        guide: "Moss sulama ve ışık yerleşimi bakım rehberi",
+        chat: "Bir soruyu yanıtlayan Moss yapay zekâ bitki bakım asistanı",
+      },
       scanHint: "Sabit tut — tanımlanıyor...",
       plantName: "Monstera deliciosa",
       plantSub: "Deve tabanı · %98 eşleşme",
@@ -582,6 +599,7 @@ function LanguageSwitcher({ compact = false }) {
 
 Object.assign(window, {
   SUPPORTED_LANGUAGES,
+  APP_STORE_URL,
   I18N,
   useLanguage,
   LanguageSwitcher,

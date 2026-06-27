@@ -1,4 +1,4 @@
-/* ---------- Phone mockup (used in home hero) ---------- */
+/* ---------- Phone mockup: real app screenshot inside a device frame ---------- */
 .phone {
   position: relative;
   width: 300px;
@@ -11,122 +11,18 @@
     0 30px 80px rgba(30,46,30,0.25),
     0 10px 30px rgba(30,46,30,0.18);
 }
-.phone-notch {
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 96px;
-  height: 26px;
-  background: #0f1a10;
-  border-radius: 16px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
-.phone-notch > div {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: #2a3b2c;
-  box-shadow: inset 0 0 0 2px #0b140c;
-}
 .phone-screen {
   width: 100%;
   height: 100%;
   border-radius: 38px;
   overflow: hidden;
-  background: var(--cream-50);
+  background: #0f1a10;
   position: relative;
 }
-
-.pm { width: 100%; height: 100%; display:flex; flex-direction:column; }
-
-/* Scan screen */
-.pm-scan { background: linear-gradient(180deg, #e6efe3 0%, #fbfaf5 55%); }
-.pm-cam {
-  flex: 1;
-  position: relative;
-  margin: 42px 16px 0;
-  border-radius: 24px;
-  background: linear-gradient(160deg, #2d442d, #3a5b39 60%, #5f8c5a);
-  overflow: hidden;
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
-.pm-bracket {
-  position: absolute;
-  width: 26px; height: 26px;
-  border: 2px solid rgba(255,255,255,0.9);
-}
-.pm-bracket.tl { top:14px; left:14px; border-right:none; border-bottom:none; border-top-left-radius:8px; }
-.pm-bracket.tr { top:14px; right:14px; border-left:none; border-bottom:none; border-top-right-radius:8px; }
-.pm-bracket.bl { bottom:14px; left:14px; border-right:none; border-top:none; border-bottom-left-radius:8px; }
-.pm-bracket.br { bottom:14px; right:14px; border-left:none; border-top:none; border-bottom-right-radius:8px; }
-.pm-leaf {
-  position: absolute; inset: 20% 30%; opacity:.95;
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.25));
-}
-.pm-scanline {
-  position: absolute; left: 14px; right: 14px; top: 50%;
-  height: 2px; background: rgba(255,255,255,0.9);
-  box-shadow: 0 0 14px rgba(255,255,255,0.7);
-  animation: pm-scan 2.4s ease-in-out infinite alternate;
-}
-@keyframes pm-scan {
-  0% { top: 18%; opacity: .2; }
-  50% { opacity: 1; }
-  100% { top: 82%; opacity: .2; }
-}
-.pm-hint {
-  position: absolute; bottom: 12px; left:0; right:0;
-  text-align:center; color:#e6efe3; font-size:11px; letter-spacing:.04em;
-}
-.pm-result {
-  background: #fff;
-  margin: 12px; padding: 14px 16px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(30,46,30,0.08);
-}
-.pm-result-head { display:flex; justify-content:space-between; align-items:center; }
-.pm-name { font-family: var(--font-display); font-size: 18px; color: var(--ink); }
-.pm-sub { color: var(--muted); font-size: 11px; margin-top: 2px; }
-.pm-badge { width:26px; height:26px; border-radius:50%; background: var(--sage-500); color:#fff; display:grid; place-items:center; font-size:13px; }
-.pm-stats {
-  display:flex; gap:10px; margin-top: 12px;
-  font-size: 10.5px; color: var(--ink-2);
-}
-.pm-stats > div { flex:1; background: var(--sage-50); padding: 8px 6px; border-radius: 10px; text-align:center; }
-.pm-stats span { display:block; color: var(--sage-700); margin-bottom:2px; font-size:12px; }
-
-/* Library screen */
-.pm-lib { background: var(--cream-50); padding: 42px 18px 12px; }
-.pm-head { display:flex; justify-content:space-between; align-items:flex-start; margin-top: 8px; }
-.pm-hello { font-family: var(--font-display); font-size: 22px; color: var(--ink); line-height:1.15; }
-.pm-hello span { font-family: var(--font-body); font-size: 11px; color: var(--muted); font-weight:500; text-transform: uppercase; letter-spacing:.1em; }
-.pm-dot { width:28px; height:28px; border-radius:50%; background: var(--sage-700); color:#fff; display:grid; place-items:center; font-size:12px; font-weight:600; }
-.pm-tabs { display:flex; gap:6px; margin: 16px 0 12px; }
-.pm-tabs span { padding: 6px 12px; font-size: 11px; border-radius: 999px; color: var(--muted); background: transparent; }
-.pm-tabs .on { background: var(--sage-700); color:#fff; }
-.pm-plants { display: grid; gap: 10px; overflow:hidden; }
-.pm-plant { display:flex; gap: 12px; padding: 10px; background:#fff; border:1px solid var(--hairline); border-radius: 16px; align-items:center; }
-.pm-plant-img { width:46px; height:46px; border-radius:12px; display:grid; place-items:center; flex-shrink:0; }
-.pm-plant-name { font-family: var(--font-display); font-size: 15px; }
-.pm-plant-sp { font-size: 10.5px; color: var(--muted); }
-.pm-plant-next { font-size: 11px; color: var(--sage-700); margin-top: 2px; font-weight:600; }
-.pm-plant-body { min-width: 0; }
-
-/* Care screen */
-.pm-care { background: linear-gradient(180deg, #e6efe3, #fbfaf5 50%); padding: 42px 18px 12px; text-align:center; }
-.pm-care-top { margin-top: 6px; }
-.pm-avatar { width: 56px; height: 56px; border-radius: 50%; display:grid; place-items:center; margin: 0 auto; box-shadow: 0 6px 14px rgba(30,46,30,0.15); }
-.pm-care-name { font-family: var(--font-display); font-size: 22px; margin-top: 8px; }
-.pm-care-sp { font-size: 11px; color: var(--muted); }
-.pm-care-ring { position:relative; margin: 14px auto 10px; width:140px; height:140px; }
-.pm-care-ring-text { position:absolute; inset:0; display:grid; place-content:center; text-align:center; }
-.pm-care-ring-text .n { font-family: var(--font-display); font-size: 40px; line-height: 1; }
-.pm-care-ring-text .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing:.12em; }
-.pm-tasks { display:grid; gap:8px; text-align:left; margin-top: 8px; }
-.pm-task { display:flex; gap: 10px; background:#fff; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--hairline); align-items:center; }
-.pm-task-dot { width:12px; height:12px; border-radius:50%; border: 2px solid var(--sage-400); flex-shrink:0; }
-.pm-task-dot.done { background: var(--sage-500); border-color: var(--sage-500); }
-.pm-task b { display:block; font-size:12px; color: var(--ink); font-weight:600; }
-.pm-task span { font-size:10.5px; color: var(--muted); }
