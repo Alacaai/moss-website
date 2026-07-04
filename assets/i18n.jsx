@@ -120,13 +120,13 @@ const I18N = {
         ["Seasonal tuning", "Care plans shift with daylight and humidity."],
       ],
       finalTitle: "Ready to grow?",
-      finalBody: "Free on iPhone. Pro features optional.",
+      finalBody: "Free on iPhone. Premium features optional.",
       finalCta: "Download on the App Store",
     },
     download: {
       eyebrow: "Available now on iPhone",
       title: <>Bring <em>Moss</em> home.</>,
-      body: "Free to download. Works beautifully on iOS 16 and later. Pro features are optional.",
+      body: "Free to download. Works beautifully on iOS 16 and later. Premium features are optional.",
       cta: "Download on the App Store",
       qrTitle: "Scan to install",
       qrBody: "Point your iPhone camera at the code.",
@@ -134,7 +134,7 @@ const I18N = {
         ["Requirements", "iPhone running iOS 16 or later. Also available on iPad and iPod touch."],
         ["Size", "86 MB. Your library and care reminders work offline."],
         ["Languages", "English, Turkish, Spanish, French, German, Japanese, Korean, Portuguese."],
-        ["Pricing", "Free to download. Moss Pro is $2.99/week, $9.99/month, or $34.99/year, with a 3-day free trial on the monthly and annual plans."],
+        ["Pricing", "Free to download. Moss Premium is $2.99/week, $9.99/month, or $34.99/year, with a 3-day free trial on the monthly and annual plans."],
       ],
     },
     about: {
@@ -144,7 +144,7 @@ const I18N = {
       story: [
         "Moss began in a sunlit apartment in Istanbul in 2023, when a wilting monstera convinced me that plant care software could be warmer, smarter, and far less nagging than what I'd tried.",
         "Moss is designed, built, and maintained by one independent developer in Istanbul. I obsess over two things: identification accuracy, and the tone of every single notification Moss sends.",
-        "Moss is independent and proud to charge a simple, honest price for Pro. I'll never sell your data, and I'll never interrupt you with ads.",
+        "Moss is independent and proud to charge a simple, honest price for Premium. I'll never sell your data, and I'll never interrupt you with ads.",
       ],
       stats: [
         ["14k+", "species identified"],
@@ -177,7 +177,7 @@ const I18N = {
         ["Getting started", [
           ["How accurate is plant identification?", "Moss correctly identifies house plants 98% of the time and garden plants about 95% of the time. When we're unsure, we show a confidence score and a list of similar species so you can pick the right one."],
           ["Does Moss work without an internet connection?", "Your saved plants, notes, and care reminders work offline. Identifying or diagnosing a plant needs an internet connection, because Moss does that on our servers rather than on your device. Syncing across devices also needs a connection."],
-          ["Is Moss free?", "Moss is free to download and try. Moss Pro unlocks unlimited identifications and advanced diagnostics for $2.99/week, $9.99/month, or $34.99/year. The monthly and annual plans include a 3-day free trial."],
+          ["Is Moss free?", "Moss is free to download and try. Moss Premium unlocks unlimited identifications and advanced diagnostics for $2.99/week, $9.99/month, or $34.99/year. The monthly and annual plans include a 3-day free trial."],
         ]],
         ["Care & reminders", [
           ["Why isn't Moss reminding me to water?", "Open Settings → Notifications and make sure Moss is allowed to send alerts. If reminders still don't arrive, tell the plant its current pot size and soil — Moss uses those to schedule accurately."],
@@ -190,7 +190,7 @@ const I18N = {
           ["How do I delete my account?", "Settings → Account → Delete account. This permanently removes all data from our servers within 30 days. You can also email mossplant@gmail.com."],
         ]],
         ["Billing", [
-          ["How do I cancel Moss Pro?", "Open the iOS Settings app → tap your name → Subscriptions → Moss → Cancel. Your Pro features remain active until the end of the billing period."],
+          ["How do I cancel Moss Premium?", "Open the iOS Settings app → tap your name → Subscriptions → Moss → Cancel. Your Premium features remain active until the end of the billing period."],
         ]],
       ],
     },
@@ -362,13 +362,13 @@ const I18N = {
         ["Mevsimsel ayar", "Bakım planları gün ışığı ve neme göre değişir."],
       ],
       finalTitle: "Büyümeye hazır mısın?",
-      finalBody: "iPhone'da ücretsiz. Pro özellikler isteğe bağlıdır.",
+      finalBody: "iPhone'da ücretsiz. Premium özellikler isteğe bağlıdır.",
       finalCta: "App Store'dan indir",
     },
     download: {
       eyebrow: "Şimdi iPhone'da",
       title: <><em>Moss</em>'u eve getir.</>,
-      body: "Ücretsiz indir. iOS 16 ve sonrasında harika çalışır. Pro özellikler isteğe bağlıdır.",
+      body: "Ücretsiz indir. iOS 16 ve sonrasında harika çalışır. Premium özellikler isteğe bağlıdır.",
       cta: "App Store'dan indir",
       qrTitle: "Yüklemek için tara",
       qrBody: "iPhone kameranı koda doğrult.",
@@ -376,7 +376,7 @@ const I18N = {
         ["Gereksinimler", "iOS 16 veya sonrası yüklü iPhone. iPad ve iPod touch'ta da kullanılabilir."],
         ["Boyut", "86 MB. Kitaplığın ve bakım hatırlatmaların çevrimdışı çalışır."],
         ["Diller", "İngilizce, Türkçe, İspanyolca, Fransızca, Almanca, Japonca, Korece, Portekizce."],
-        ["Fiyatlandırma", "İndirmek ücretsiz. Moss Pro haftada $2.99, ayda $9.99 veya yılda $34.99; aylık ve yıllık planlarda 3 günlük ücretsiz deneme."],
+        ["Fiyatlandırma", "İndirmek ücretsiz. Moss Premium haftada $2.99, ayda $9.99 veya yılda $34.99; aylık ve yıllık planlarda 3 günlük ücretsiz deneme."],
       ],
     },
     about: {
@@ -386,7 +386,7 @@ const I18N = {
       story: [
         "Moss, 2023'te İstanbul'da güneş alan bir evde başladı; solan bir monstera, bitki bakım yazılımının daha sıcak, daha akıllı ve daha az bunaltıcı olabileceğine beni ikna etti.",
         "Moss, İstanbul'da bağımsız bir geliştirici tarafından tek başına tasarlanır, geliştirilir ve sürdürülür. İki şeye takıntılıyım: tanıma doğruluğu ve Moss'un gönderdiği her bildirimin tonu.",
-        "Moss bağımsızdır ve Pro için sade, dürüst bir fiyat ister. Verini asla satmam, reklamlarla seni bölmem.",
+        "Moss bağımsızdır ve Premium için sade, dürüst bir fiyat ister. Verini asla satmam, reklamlarla seni bölmem.",
       ],
       stats: [
         ["14 bin+", "tanınan tür"],
@@ -419,7 +419,7 @@ const I18N = {
         ["Başlarken", [
           ["Bitki tanıma ne kadar doğru?", "Moss ev bitkilerini yaklaşık %98, bahçe bitkilerini yaklaşık %95 doğrulukla tanır. Emin olmadığımızda güven skoru ve benzer türleri gösteririz."],
           ["Moss internet olmadan çalışır mı?", "Kayıtlı bitkilerin, notların ve bakım hatırlatmaların çevrimdışı çalışır. Bir bitkiyi tanımak veya teşhis etmek internet bağlantısı gerektirir; çünkü Moss bunu cihazında değil sunucularımızda yapar. Cihazlar arası eşitleme de bağlantı gerektirir."],
-          ["Moss ücretsiz mi?", "Moss'u indirmek ve denemek ücretsizdir. Moss Pro sınırsız tanıma ve gelişmiş teşhisi haftada $2.99, ayda $9.99 veya yılda $34.99 ile açar. Aylık ve yıllık planlar 3 günlük ücretsiz deneme içerir."],
+          ["Moss ücretsiz mi?", "Moss'u indirmek ve denemek ücretsizdir. Moss Premium sınırsız tanıma ve gelişmiş teşhisi haftada $2.99, ayda $9.99 veya yılda $34.99 ile açar. Aylık ve yıllık planlar 3 günlük ücretsiz deneme içerir."],
         ]],
         ["Bakım ve hatırlatmalar", [
           ["Moss neden sulamayı hatırlatmıyor?", "Ayarlar → Bildirimler bölümünden Moss'un bildirim göndermesine izin verildiğinden emin ol. Hâlâ gelmiyorsa bitkiye saksı boyu ve toprak bilgisini gir; Moss bunları program için kullanır."],
@@ -432,7 +432,7 @@ const I18N = {
           ["Hesabımı nasıl silerim?", "Ayarlar → Hesap → Hesabı sil. Bu işlem sunucularımızdaki verileri 30 gün içinde kalıcı olarak kaldırır. Ayrıca mossplant@gmail.com adresine yazabilirsin."],
         ]],
         ["Faturalama", [
-          ["Moss Pro'yu nasıl iptal ederim?", "iOS Ayarlar uygulamasını aç → adına dokun → Abonelikler → Moss → İptal. Pro özelliklerin fatura döneminin sonuna kadar aktif kalır."],
+          ["Moss Premium'u nasıl iptal ederim?", "iOS Ayarlar uygulamasını aç → adına dokun → Abonelikler → Moss → İptal. Premium özelliklerin fatura döneminin sonuna kadar aktif kalır."],
         ]],
       ],
     },
